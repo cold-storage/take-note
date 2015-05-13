@@ -36,3 +36,5 @@ take-note supports github flavored markdown.
 ## Libs
 
 http://lunrjs.com
+
+https://code.google.com/p/crypto-js
