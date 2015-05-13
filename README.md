@@ -32,3 +32,7 @@ take-note works equally well on smartphones and desktops.
 ## Markdown
 
 take-note supports github flavored markdown.
+
+## Libs
+
+http://lunrjs.com
