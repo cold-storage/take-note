@@ -38,3 +38,8 @@ take-note supports github flavored markdown.
 http://lunrjs.com
 
 https://code.google.com/p/crypto-js
+
+https://github.com/evilstreak/markdown-js
+
+https://github.com/chjj/marked
+
