@@ -1,0 +1,40 @@
+{
+  "name": "take-note",
+  "version": "0.0.1",
+  "description": "a secure, searchable, offline capable notes application",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johndstein/take-note.git"
+  },
+  "keywords": [
+    "fast",
+    "secure",
+    "search",
+    "notes",
+    "offline"
+  ],
+  "author": "John Stein <john@johnandkerri.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johndstein/take-note/issues"
+  },
+  "homepage": "https://github.com/johndstein/take-note",
+  "devDependencies": {
+    "chai": "2.3.0",
+    "jasmine": "2.3.1",
+    "jasmine-core": "2.3.4",
+    "karma": "0.12.31",
+    "karma-chrome-launcher": "0.1.12",
+    "karma-firefox-launcher": "0.1.6",
+    "karma-jasmine": "0.3.5",
+    "lab": "5.8.1",
+    "lunr": "0.5.9"
+  }
+}

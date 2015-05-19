@@ -13,7 +13,9 @@ take-note provides the following features.
 
 ## Secure
 
-Private notes are only searchable and viewable by their owner. They are encrypted on the client before sending to the server. They are stored on the server encrypted and transported over SSL.
+Private notes are only searchable and viewable by their owner. They are
+encrypted on the client before sending to the server. They are stored on the
+server encrypted and transported over SSL.
 
 ## Fast
 
