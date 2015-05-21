@@ -40,6 +40,6 @@
   "dependencies": {
     "bcrypt": "0.8.3",
     "hapi": "8.4.0",
-    "hapi-auth-basic": "^2.0.0"
+    "hapi-auth-cookie": "2.2.0"
   }
 }
