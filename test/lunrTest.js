@@ -1,9 +1,11 @@
+var Lab = require('lab');
+var lab = exports.lab = Lab.script();
+var assert = require('chai').assert;
 var lunr = require('lunr');
 
-describe("lunr suite", function() {
-  it("will do a simple search", function(done) {
+lab.experiment('lunr tests', function() {
 
-
+  lab.test('simple search', function(done) {
     var idx = lunr(function() {
       this.field('title', {
         boost: 10
@@ -30,10 +32,11 @@ describe("lunr suite", function() {
     console.log(sr);
     console.log('asdf asdf asdfyyyaaaa, foo');
 
-    done();
+    assert(sr.length === 1);
+    assert(sr[0].ref === '375');
+    assert(sr[0].score === 0.02353104026675058);
 
-    expect(sr.length).toBe(1);
-    expect(sr[0].ref).toBe('375');
-    expect(sr[0].score).toBe(0.02353104026675058);
+    done();
   });
+
 });

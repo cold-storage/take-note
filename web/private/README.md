@@ -1,0 +1,1 @@
+Any web assets that require authentication go here.

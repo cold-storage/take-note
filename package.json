@@ -2,7 +2,7 @@
   "name": "take-note",
   "version": "0.0.1",
   "description": "a secure, searchable, offline capable notes application",
-  "main": "index.js",
+  "main": "node/index.js",
   "directories": {
     "test": "test"
   },
@@ -36,5 +36,10 @@
     "karma-jasmine": "0.3.5",
     "lab": "5.8.1",
     "lunr": "0.5.9"
+  },
+  "dependencies": {
+    "bcrypt": "0.8.3",
+    "hapi": "8.4.0",
+    "hapi-auth-basic": "^2.0.0"
   }
 }
