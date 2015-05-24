@@ -1,0 +1,19 @@
+{
+  "id": "e3092b7b-8f50-8056-d061-32fc099cd70f",
+  "name": "take-note",
+  "timestamp": 1432462082873,
+  "requests": [{
+    "collectionId": "e3092b7b-8f50-8056-d061-32fc099cd70f",
+    "id": "be88455e-b6cf-3a07-0b4d-f90d94b18e92",
+    "name": "Log in or out /loginout/",
+    "description": "",
+    "url": "http://localhost:8000/auth/",
+    "method": "PUT",
+    "headers": "Content-Type: application/json\n",
+    "data": "{\"pw\":\"somepw\"}",
+    "dataMode": "raw",
+    "timestamp": 0,
+    "version": 2,
+    "time": 1432462654536
+  }]
+}
