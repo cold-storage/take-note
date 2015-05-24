@@ -2,19 +2,27 @@ var hapi = require('hapi');
 var bcrypt = require('bcrypt');
 var cookie = require('hapi-auth-cookie');
 var server = new hapi.Server();
-
+var boom = require('boom');
 var password = '$2a$13$uc24plNwFp8UAbAErqmz6eguIfez5EHvSLpSoZCEkA5kTwZ.QBUai';
 
-function validate(un, pw, callback) {
-  bcrypt.compare(pw, password, function(err, isValid) {
-    callback(err, isValid, {
-      name: 'John Stein'
-    });
+function logInOut(request, reply) {
+  bcrypt.compare(request.payload.pw, password, function(err, isValid) {
+    console.error('err', err);
+    if (isValid) {
+      request.auth.session.set({
+        ok: 'cool'
+      });
+      reply(null, {
+        ok: 'cool'
+      });
+    } else {
+      request.auth.session.clear();
+      reply(boom.unauthorized('not cool'));
+    }
   });
-};
+}
 
 server.connection({
-  host: 'localhost',
   port: 8000
 });
 
@@ -24,6 +32,12 @@ server.register(cookie, function(err) {
     cookie: 'yo-cookie',
     isSecure: false
   });
+});
+
+server.route({
+  method: 'PUT',
+  path: '/loginout/',
+  handler: logInOut
 });
 
 server.route({
@@ -76,33 +90,23 @@ server.route({
   method: 'GET',
   path: '/api/foo',
   handler: function(request, reply) {
-    console.log('request.state.session', request.state.session);
-    request.auth.session.set({
-      must: 'be json'
-    });
-    if (!request.state.session) {
-      request.state.session = {
-        yo: 'dude'
-      };
-    }
     reply('hello foo world');
   }
 });
 
 server.route({
-  method: 'GET',
   path: '/private/{foo*}',
+  method: 'GET',
+  handler: {
+    directory: {
+      path: 'web/private',
+      listing: true
+    }
+  },
   config: {
     auth: 'zession',
-    handler: {
-      directory: {
-        path: 'web/private',
-        listing: true
-      }
-    }
   }
 });
-
 
 server.start(function() {
   console.log('hapi running at: ' + server.info.uri);

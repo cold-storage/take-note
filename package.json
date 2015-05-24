@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "bcrypt": "0.8.3",
+    "boom": "2.7.2",
     "hapi": "8.4.0",
     "hapi-auth-cookie": "2.2.0"
   }
